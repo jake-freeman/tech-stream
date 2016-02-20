@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JFrame" name="jFrame1">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Stream Text Changer - Settings"/>
+        <Property name="alwaysOnTop" type="boolean" value="true"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[424, 274]"/>
+        </Property>
+        <Property name="resizable" type="boolean" value="false"/>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="163" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jScrollPane1" pref="190" max="32767" attributes="0"/>
+                              <Component id="jTextField5" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jScrollPane2" pref="190" max="32767" attributes="0"/>
+                              <Component id="jTextField6" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="14" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="jScrollPane2" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jTextField5" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
+                      <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="78" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jList1">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+                <Property name="selectionMode" type="int" value="0"/>
+                <Property name="selectedIndex" type="int" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList(gameListModel)"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="jList1.addListSelectionListener(new ListSelectionListener() {&#xa;    @Override&#xa;    public void valueChanged (ListSelectionEvent arg0)&#xa;    {&#xa;        if (!arg0.getValueIsAdjusting())&#xa;        {&#xa;            currentGameSettingSelection = jList1.getSelectedValue().toString();&#xa;            jTextField5.setText(currentGameSettingSelection);&#xa;        }&#xa;    }});"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Games:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Game Types:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField5">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="jList1.getSelectedValue().toString()" type="code"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition5 = JComponent.WHEN_FOCUSED;&#xa;            InputMap iMap5 = jTextField5.getInputMap(condition5);&#xa;            ActionMap aMap5 = jTextField5.getActionMap();&#xa;&#xa;            String enter5 = &quot;enter&quot;;&#xa;            iMap5.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter5);&#xa;            aMap5.put(enter5, new AbstractAction() {&#xa;&#xa;                @Override&#xa;                public void actionPerformed(ActionEvent arg0)&#xa;                {&#xa;                    if (jList1.getSelectedValue().toString().equals(&quot;&lt;Add New Game&gt;&quot;)&amp;&amp;&#xa;                        !jTextField5.getText().equals(&quot;&lt;Add New Game&gt;&quot;)){&#xa;                        addGameToList(jTextField5.getText() + &quot; &quot;);&#xa;                        jList1.setSelectedValue(jTextField5.getText() + &quot; &quot;,true);&#xa;                    }&#xa;                    else if (!jList1.getSelectedValue().toString().equals(jTextField5.getText()))&#xa;                    {&#xa;                        editGameOnList(jList1.getSelectedValue().toString(),jTextField5.getText().trim() + &quot; &quot;);&#xa;                    }&#xa;                }&#xa;            });"/>
+          </AuxValues>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JList" name="jList2">
+              <Properties>
+                <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+                <Property name="selectedIndex" type="int" value="0"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JList(typeListModel)"/>
+                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="jList2.addListSelectionListener(new ListSelectionListener() {&#xa;            @Override&#xa;            public void valueChanged (ListSelectionEvent arg0)&#xa;            {&#xa;                if (!arg0.getValueIsAdjusting())&#xa;                {&#xa;                    currentTypeSettingSelection = jList2.getSelectedValue().toString();&#xa;                    jTextField6.setText(currentTypeSettingSelection);&#xa;                }&#xa;            }});"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JTextField" name="jTextField6">
+          <Properties>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="jList2.getSelectedValue().toString()" type="code"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition6 = JComponent.WHEN_FOCUSED;&#xa;            InputMap iMap6 = jTextField6.getInputMap(condition5);&#xa;            ActionMap aMap6 = jTextField6.getActionMap();&#xa;&#xa;            String enter6 = &quot;enter&quot;;&#xa;            iMap6.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter6);&#xa;            aMap6.put(enter6, new AbstractAction() {&#xa;&#xa;                @Override&#xa;                public void actionPerformed(ActionEvent arg0)&#xa;                {&#xa;                    if (jList2.getSelectedValue().toString().equals(&quot;&lt;Add New Game Type&gt;&quot;)&amp;&amp;&#xa;                        !jTextField6.getText().equals(&quot;&lt;Add New Game Type&gt;&quot;)){&#xa;                        addTypeToList(jTextField6.getText() + &quot; &quot;);&#xa;                        jList2.setSelectedValue(jTextField6.getText() + &quot; &quot;,true);&#xa;                    }&#xa;                    else if (!jList2.getSelectedValue().toString().equals(jTextField6.getText()))&#xa;                    {&#xa;                        editTypeOnList(jList2.getSelectedValue().toString(),jTextField6.getText().trim() + &quot; &quot;);&#xa;                    }&#xa;                }&#xa;            });"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JFrame" name="jFrame2">
+      <Properties>
+        <Property name="title" type="java.lang.String" value="Help"/>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[400, 300]"/>
+        </Property>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[670, 400]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane4" pref="661" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jScrollPane4" pref="395" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JEditorPane" name="jEditorPane1">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="contentType" type="java.lang.String" value="text/html" noResource="true"/>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;  &lt;body style=&quot;padding:6&quot;&gt;&#xa;&lt;h1&gt;Program Function/Features&lt;/h1&gt;&#xa;&lt;h2&gt;What does this program do?&lt;/h2&gt;&#xa;&lt;h3&gt;Basically, it writes text files&lt;/h3&gt;&#xa;This program writes multiple text files to be uses by your streaming program of choice to &#xa;display titles and other information. &#xa;&lt;p&gt;By default the program writes text files representing:&lt;/p&gt;&#xa;&lt;ul&gt;&#xa;&lt;li&gt;What game is being played&lt;/li&gt;&#xa;&lt;li&gt;What people/teams are playing it&lt;/li&gt;&#xa;&lt;li&gt;The individual set count/stock count of the people/teams playing&lt;/li&gt;&#xa;&lt;li&gt;What game type is being played (like Winners Bracket, Grand Finals, Crew Battle, etc.)&lt;/li&gt;&#xa;&lt;li&gt;The names of the individual commentators (both combined together and as separate text files)&lt;/li&gt;&#xa;&lt;li&gt;Two custom text files for other desired text&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;h3&gt;Where are the text files? How do I use them?&lt;/h3&gt;&#xa;The text files are written in the folder where this program is located.&#xa;&lt;p&gt;The names of the text files are as follows:&lt;/p&gt;&#xa;&lt;ul&gt;&#xa;&lt;li&gt;Player 1/Team 1 Name = &quot;Player1Name.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Player 2/Team 2 Name = &quot;Player2Name.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Player 1/Team 1 Score = &quot;P1Score.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Player 1/Team 1 Score = &quot;P2Score.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Commentator 1 Name = &quot;Commentator1.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Commentator 2 Name = &quot;Commentator2.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Combined Commentator Names = &quot;Commentators.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Game Name = &quot;Game.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Game Type/Status = &quot;Status.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Custom Text 1 = &quot;custom1.txt&quot;&lt;/li&gt;&#xa;&lt;li&gt;Custom Text 2 = &quot;custom2.txt&quot;&lt;/li&gt;&#xa;&lt;/ul&gt;&#xa;&lt;h3&gt;It also manages the stream text!&lt;/h3&gt;&#xa;It makes it easier than ever to maintain a set format for stream text because all the text is in &#xa;one place and things like game name and game type are in a preset list you can customize to &#xa;keep consistency throughout. &#xa;&lt;p&gt;It also makes actions such as incrementing and decrementing set counts or crew battle counts possible.&lt;/p&gt;&#xa;&lt;h3&gt;It can be used as a scene change!&lt;/h3&gt;&#xa;Using the scene changing buttons it is easy to change what scene you are broadcasting and be able to quickly &#xa;tell which scene you are currently using.&#xa;&lt;h1&gt;How to setup streaming software&lt;/h1&gt;&#xa;&lt;h2&gt;With Open Broadcaster (OBS)&lt;/h2&gt;&#xa;&lt;h3&gt;To add text&lt;/h3&gt;&#xa;In OBS, select the scene you will be using and right click in the &quot;Sources&quot; region and hover over &#xa;&quot;Add&quot; and then select &quot;Text&quot;&#xa;&lt;br&gt;Then, on the new text dialogue, select the &quot;From text file&quot; circle and click &quot;browse...&quot; &#xa;Navigate to the folder this program is in (the text files will be in that folder) and select the desired file. &#xa;Format the text however you desire.&#xa;&lt;h3&gt;Setup scene changer&lt;/h3&gt;&#xa;By default the scene changing buttons simply execute a key press for &quot;F2&quot;, &quot;F3&quot;, and &quot;F4&quot; respectively. To make that work with OBS simply right click a scene and select &quot;Set Hotkey&quot;. Then set that hotkey to &#xa;either &quot;F2&quot;, &quot;F3&quot;, or &quot;F4&quot;.&#xa;&lt;p&gt;Note: in the standard version of OBS (not multi-platform version), the scene switching is &#xa;rather lagy for certain components. Mostly if you have a webcam, it will likely take a second or so to show up after &#xa;you switch scenes, but there shouldn&apos;t be any dropped frames as a result of scene switching&lt;/p&gt;&#xa;&lt;h2&gt;With XSplit&lt;/h2&gt;&#xa;&lt;h3&gt;SPECIFIC INSTRUCTIONS COMING SOON&lt;/h3&gt;&#xa;For now, refer to the OBS instructions above, they should be very similar.&#xa;&lt;h1&gt;Changing Settings&lt;/h1&gt;&#xa;&lt;h2&gt;Add, edit or remove games/game types&lt;/h2&gt;&#xa;&lt;h3&gt;To Add:&lt;/h3&gt;&#xa;Use the text boxes to add, edit or remove games or game types.&#xa;To add a game or game type select the &lt;Add Game&gt; or &lt;Add Game Type&gt; on the&#xa;top if the list, delete the text in the box and type the desired text and then press enter.&#xa;&lt;h3&gt;To Edit:&lt;/h3&gt;&#xa;To edit an entry, select what game or game type you want to edit, &#xa;edit the text in the box, then press enter to confirm the change.&#xa;&lt;h3&gt;To delete:&lt;/h3&gt;&#xa;To delete an entry, follow the same procedure as editing a game/game type but simply&#xa;delete all the characters in the box and press enter to delete the entry.&#xa;&lt;p&gt;Any changes made will update in the main program immediately, but won&apos;t update the text files until&#xa;the either the &quot;Update!&quot; button is pressed or the appropriate box is changed&lt;/p&gt;&#xa;  &lt;/body&gt;&#xa;&lt;/html&gt;&#xa;"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Stream Text Changer"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jComboBox1" min="-2" pref="218" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jComboBox2" min="-2" pref="215" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="0" pref="244" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="jTextField2" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSpinner3" min="-2" pref="49" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jTextField1" min="-2" pref="160" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSpinner2" min="-2" pref="49" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jTextField3" alignment="0" min="-2" pref="215" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jTextField4" min="-2" pref="215" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jToggleButton1" min="-2" pref="137" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jToggleButton2" min="-2" pref="150" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jToggleButton3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="19" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+              <Component id="jButton1" min="-2" pref="180" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jButton3" min="-2" pref="41" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jTextField7" min="-2" pref="215" max="-2" attributes="0"/>
+                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField8" min="-2" pref="215" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="161" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinner2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jSpinner3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jToggleButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jTextField7" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jButton3" max="32767" attributes="0"/>
+                  <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JTextField" name="jTextField1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Player 1"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap = jTextField1.getInputMap(condition);&#xa;  ActionMap aMap = jTextField1.getActionMap();&#xa;&#xa;  String enter = &quot;enter&quot;;&#xa;  iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);&#xa;  aMap.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox1ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(gameComboModel)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Player 2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition2 = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap2 = jTextField2.getInputMap(condition2);&#xa;  ActionMap aMap2 = jTextField2.getActionMap();&#xa;&#xa;  String enter2 = &quot;enter&quot;;&#xa;  iMap2.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter2);&#xa;  aMap2.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="0"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox2ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox(typeComboModel)"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Game:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Game Type:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Left Player:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Right Player:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinner2">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ChangeListener listener2 = new ChangeListener() {&#xa;      public void stateChanged(ChangeEvent e) &#xa;      {&#xa;        try&#xa;        {&#xa;            PrintWriter numberOfWins1 = new PrintWriter(&quot;P1Score.txt&quot;);&#xa;            numberOfWins1.print(jSpinner2.getValue().toString());&#xa;            numberOfWins1.close();&#xa;        }&#xa;        catch (Exception e2)&#xa;        {&#xa;            e2.printStackTrace();&#xa;        }&#xa;      }&#xa;    };&#xa;jSpinner2.addChangeListener(listener2);"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(new SpinnerListModel(spinner1List))"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String[] spinner1List = {&quot;-&quot;,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;,&quot;13&quot;,&quot;14&quot;,&quot;15&quot;,&quot;16&quot;,&quot;17&quot;,&quot;18&quot;,&quot;19&quot;,&quot;20&quot;,&quot;21&quot;,&quot;22&quot;,&quot;23&quot;,&quot;24&quot;,&quot;25&quot;,&quot;26&quot;,&quot;27&quot;,&quot;28&quot;,&quot;29&quot;,&quot;30&quot;,&quot;31&quot;,&quot;32&quot;,&quot;33&quot;,&quot;34&quot;,&quot;35&quot;,&quot;36&quot;,&quot;37&quot;,&quot;38&quot;,&quot;39&quot;,&quot;40&quot;,&quot;41&quot;,&quot;42&quot;,&quot;43&quot;,&quot;44&quot;,&quot;45&quot;,&quot;46&quot;,&quot;47&quot;,&quot;48&quot;,&quot;49&quot;,&quot;50&quot;,&quot;50&quot;,&quot;51&quot;,&quot;52&quot;,&quot;53&quot;,&quot;54&quot;,&quot;55&quot;,&quot;56&quot;,&quot;57&quot;,&quot;58&quot;,&quot;59&quot;,&quot;60&quot;,&quot;61&quot;,&quot;62&quot;,&quot;63&quot;,&quot;64&quot;,&quot;65&quot;,&quot;66&quot;,&quot;67&quot;,&quot;68&quot;,&quot;69&quot;,&quot;70&quot;,&quot;71&quot;,&quot;72&quot;,&quot;73&quot;,&quot;74&quot;,&quot;75&quot;,&quot;76&quot;,&quot;77&quot;,&quot;78&quot;,&quot;79&quot;,&quot;80&quot;,&quot;81&quot;,&quot;82&quot;,&quot;83&quot;,&quot;84&quot;,&quot;85&quot;,&quot;86&quot;,&quot;87&quot;,&quot;88&quot;,&quot;89&quot;,&quot;90&quot;,&quot;91&quot;,&quot;92&quot;,&quot;93&quot;,&quot;94&quot;,&quot;95&quot;,&quot;96&quot;,&quot;97&quot;,&quot;98&quot;,&quot;99&quot;};"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JSpinner" name="jSpinner3">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="ChangeListener listener3 = new ChangeListener() {&#xa;      public void stateChanged(ChangeEvent e) &#xa;      {&#xa;        try&#xa;        {&#xa;            PrintWriter numberOfWins2 = new PrintWriter(&quot;P2Score.txt&quot;);&#xa;            numberOfWins2.print(jSpinner3.getValue().toString());&#xa;            numberOfWins2.close();&#xa;        }&#xa;        catch (Exception e3)&#xa;        {&#xa;            e3.printStackTrace();&#xa;        }&#xa;      }&#xa;    };&#xa;jSpinner3.addChangeListener(listener3);"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JSpinner(new SpinnerListModel(spinner2List))"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="String[] spinner2List = {&quot;-&quot;,&quot;0&quot;,&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;,&quot;10&quot;,&quot;11&quot;,&quot;12&quot;,&quot;13&quot;,&quot;14&quot;,&quot;15&quot;,&quot;16&quot;,&quot;17&quot;,&quot;18&quot;,&quot;19&quot;,&quot;20&quot;,&quot;21&quot;,&quot;22&quot;,&quot;23&quot;,&quot;24&quot;,&quot;25&quot;,&quot;26&quot;,&quot;27&quot;,&quot;28&quot;,&quot;29&quot;,&quot;30&quot;,&quot;31&quot;,&quot;32&quot;,&quot;33&quot;,&quot;34&quot;,&quot;35&quot;,&quot;36&quot;,&quot;37&quot;,&quot;38&quot;,&quot;39&quot;,&quot;40&quot;,&quot;41&quot;,&quot;42&quot;,&quot;43&quot;,&quot;44&quot;,&quot;45&quot;,&quot;46&quot;,&quot;47&quot;,&quot;48&quot;,&quot;49&quot;,&quot;50&quot;,&quot;50&quot;,&quot;51&quot;,&quot;52&quot;,&quot;53&quot;,&quot;54&quot;,&quot;55&quot;,&quot;56&quot;,&quot;57&quot;,&quot;58&quot;,&quot;59&quot;,&quot;60&quot;,&quot;61&quot;,&quot;62&quot;,&quot;63&quot;,&quot;64&quot;,&quot;65&quot;,&quot;66&quot;,&quot;67&quot;,&quot;68&quot;,&quot;69&quot;,&quot;70&quot;,&quot;71&quot;,&quot;72&quot;,&quot;73&quot;,&quot;74&quot;,&quot;75&quot;,&quot;76&quot;,&quot;77&quot;,&quot;78&quot;,&quot;79&quot;,&quot;80&quot;,&quot;81&quot;,&quot;82&quot;,&quot;83&quot;,&quot;84&quot;,&quot;85&quot;,&quot;86&quot;,&quot;87&quot;,&quot;88&quot;,&quot;89&quot;,&quot;90&quot;,&quot;91&quot;,&quot;92&quot;,&quot;93&quot;,&quot;94&quot;,&quot;95&quot;,&quot;96&quot;,&quot;97&quot;,&quot;98&quot;,&quot;99&quot;};"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Commentator 1"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition3 = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap3 = jTextField3.getInputMap(condition3);&#xa;  ActionMap aMap3 = jTextField3.getActionMap();&#xa;&#xa;  String enter3 = &quot;enter&quot;;&#xa;  iMap3.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter3);&#xa;  aMap3.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Commentators:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Commentator 2"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField4ActionPerformed"/>
+      </Events>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition4 = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap4 = jTextField4.getInputMap(condition4);&#xa;  ActionMap aMap4 = jTextField4.getActionMap();&#xa;&#xa;  String enter4 = &quot;enter&quot;;&#xa;  iMap4.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter4);&#xa;  aMap4.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="UPDATE!"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton1">
+      <Properties>
+        <Property name="selected" type="boolean" value="true"/>
+        <Property name="text" type="java.lang.String" value="Main (F2)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="View 2 (F3)"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JToggleButton" name="jToggleButton3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Player Cam (F4) "/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[146, 29]"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton3ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton2">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/tech/stream/gears.png"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField7">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Custom Text 1"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[112, 28]"/>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition7 = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap7 = jTextField7.getInputMap(condition7);&#xa;  ActionMap aMap7 = jTextField7.getActionMap();&#xa;&#xa;  String enter7 = &quot;enter&quot;;&#xa;  iMap7.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter7);&#xa;  aMap7.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTextField8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Custom Text 2"/>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="int condition8 = JComponent.WHEN_FOCUSED;&#xa;  InputMap iMap8 = jTextField2.getInputMap(condition8);&#xa;  ActionMap aMap8 = jTextField2.getActionMap();&#xa;&#xa;  String enter8 = &quot;enter&quot;;&#xa;  iMap8.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter8);&#xa;  aMap8.put(enter, new AbstractAction() {&#xa;&#xa;     @Override&#xa;     public void actionPerformed(ActionEvent arg0) &#xa;    {&#xa;        writeAll();&#xa;    }&#xa;  });"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel8">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Custom 1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel9">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Custom 2"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="?"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>

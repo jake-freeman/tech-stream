@@ -1,0 +1,10 @@
+# Output text files
+*.txt
+!README.txt
+
+# Build files
+/build
+*.jar
+
+# Other stuff
+*.DS_Store
